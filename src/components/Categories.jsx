@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 function Categories() {
   const [status, setStatus] = useState(false);
 
@@ -11,7 +10,7 @@ function Categories() {
   return (
     <div>
       <h2>Categories</h2>
-      <button onClick={handleClick}>{status ? 'Active' : 'Inactive'}</button>
+      <button type="button" onClick={handleClick}>{status ? 'Active' : 'Inactive'}</button>
     </div>
   );
 }

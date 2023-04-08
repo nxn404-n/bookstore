@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import BookList from './components/BookList';
+import {
+  BrowserRouter as Router, Route, Switch, Link,
+} from 'react-router-dom';
+import BookList from './components/Booklist.js';
 import Categories from './components/Categories';
 
 function App() {
