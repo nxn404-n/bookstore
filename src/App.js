@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Link,
+  BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
 import BookList from './components/Booklist';
 import Categories from './components/Categories';
@@ -17,8 +17,10 @@ function App() {
         </nav>
 
         <div>
-          <Route exact path="/" component={BookList} />
-          <Route path="/categories" component={Categories} />
+          <Routes>
+            <Route exact path="/" element={<BookList />} />
+            <Route path="/categories" element={<Categories />} />
+          </Routes>
         </div>
       </div>
     </Router>
