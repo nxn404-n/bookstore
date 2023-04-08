@@ -14,6 +14,10 @@ function BookList() {
     setAuthor('');
   };
 
+  const handleRemove = (title) => {
+    setBooks(books.filter((book) => book.title !== title));
+  };
+
   return (
     <div>
       <h2>Book List</h2>
@@ -23,6 +27,7 @@ function BookList() {
             {book.title}
             by
             {book.author}
+            <button type="button" onClick={() => handleRemove(book.title)}>Remove</button>
           </li>
         ))}
       </ul>
