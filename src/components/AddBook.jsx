@@ -1,36 +1,47 @@
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { addBook, getBookList } from '../redux/getApiData';
 
 export default function AddBook() {
-  const [formData, setFormData] = useState({ title: '', author: '' });
+  const [book, setBook] = useState({
+    title: '',
+    author: '',
+  });
   const dispatch = useDispatch();
+  const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
+
   const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setBook((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({ ...formData, id: Math.random().toString() }));
-    setFormData({ title: '', author: '' });
+    const itemId = uuid();
+    dispatch(addBook({
+      URL,
+      newBook: {
+        item_id: itemId,
+        ...book,
+        category: '',
+      },
+    })).then(() => {
+      dispatch(getBookList(URL));
+    });
+    setBook({
+      title: '',
+      author: '',
+    });
   };
+
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="title"
-        placeholder="Title"
-        value={formData.title}
-        onChange={handleInputChange}
-        required
-      />
-      <input
-        type="text"
-        name="author"
-        placeholder="Author"
-        value={formData.author}
-        onChange={handleInputChange}
-        required
-      />
+      <input type="text" placeholder="Title" name="title" value={book.title} onChange={handleInputChange} required />
+      <input type="text" placeholder="Author" name="author" value={book.author} onChange={handleInputChange} required />
       <button type="submit">Add book</button>
     </form>
   );
