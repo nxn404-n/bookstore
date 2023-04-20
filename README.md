@@ -8,7 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  <!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -92,15 +92,14 @@ Use <code>npm i</code> to install all dependencies
 
 ### Usage
 
-There's no command required to run the project
-
+<code>npm start</code> to start the project
 ### Run tests
 
 Use <code>npm run test</code> to run test
 
 ### Deployment
 
-Use <code>npm start</code> to deploy the project
+Use <code>npm build</code> to deploy the project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
