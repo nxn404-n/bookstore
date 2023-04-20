@@ -60,9 +60,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-> [Correct set up of GitHub Flows.]
-> [The creation and addition of HTML, CSS and JavaScript files.]
-> [Desktop-first styling]
+- Correct use of Gitflow
+- Correct use of ES6 syntax
+- Used API to the project
+- Add and remove books from the collection
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
