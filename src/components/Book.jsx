@@ -18,9 +18,31 @@ const Book = ({ title, author, itemId }) => {
 
   return (
     <div className="book-container">
-      <p>{title}</p>
-      <p>{author}</p>
-      <button type="button" onClick={handleRemove}>Remove</button>
+      <div className="book-info">
+        <p className="book-category">Action</p>
+        <p className="book-title">{title}</p>
+        <p className="book-author">{author}</p>
+        <div className="btn-container">
+          <button type="button" onClick={() => handleRemove()}>Remove</button>
+          <div className="vertical-line"> </div>
+          <button className="btn-comment-book" type="button">Comment</button>
+          <div className="vertical-line"> </div>
+          <button className="btn-edit-book" type="button">Edit</button>
+        </div>
+      </div>
+      <div className="right-container">
+        <div className="chart"> </div>
+        <div className="progress-container">
+          <div className="progress-percentage">40%</div>
+          <div className="progress-status">Completed</div>
+        </div>
+        <div className="vertical-line-big"> </div>
+        <div className="chapter-container">
+          <div className="current-chapter">CURRENT CHAPTER</div>
+          <div className="chapter-name">Chapter 17</div>
+          <button type="button" className="update-progress-btn">UPDATE PROGRESS</button>
+        </div>
+      </div>
     </div>
   );
 };

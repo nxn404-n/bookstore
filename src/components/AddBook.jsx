@@ -39,10 +39,13 @@ export default function AddBook() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="Title" name="title" value={book.title} onChange={handleInputChange} required />
-      <input type="text" placeholder="Author" name="author" value={book.author} onChange={handleInputChange} required />
-      <button type="submit">Add book</button>
-    </form>
+    <div className="add-book">
+      <h2>Add new book</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="Title" name="title" value={book.title} onChange={handleInputChange} required />
+        <input type="text" placeholder="Author" name="author" value={book.author} onChange={handleInputChange} required />
+        <button type="submit">Add book</button>
+      </form>
+    </div>
   );
 }
