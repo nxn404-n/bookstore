@@ -6,9 +6,9 @@ export default function Categories() {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <div className="categories-div">
       <button type="button" onClick={() => dispatch(checkStatus())}>Check Status</button>
       <h2>{categories.value}</h2>
-    </>
+    </div>
   );
 }

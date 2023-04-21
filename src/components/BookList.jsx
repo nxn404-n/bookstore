@@ -32,10 +32,12 @@ export default function BookList() {
   const error = !isSuccess && <p>{errorMessage}</p>;
 
   return (
-    <section className="books-container-section">
+    <section>
       {isLoading ? <p>Loading...</p> : null}
 
       {books || error}
+
+      <hr className="hr-add-book" />
 
       <AddBook />
     </section>
